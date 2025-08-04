@@ -1,4 +1,4 @@
-package applicationcode.usecase.calculateshipping;
+package applicationcode.usecase.calculateshippingrequestresponse;
 
 import applicationcode.domainmodel.Region;
 import applicationcode.domainmodel.ShippingRegion;
@@ -12,15 +12,12 @@ class UseCase implements Provided {
     }
 
     @Override
-    public double calculate(String countryCode, double weight) {
-        if (countryCode == null || countryCode.isEmpty()) {
-            throw new IllegalArgumentException("Country code cannot be null or empty");
-        }
+    public CalculateShippingResponse handle(CalculateShippingRequest request) {
 
-        String regionCode = required.getRegionCode(countryCode);
+        String regionCode = required.getRegionCode(request.getCountryCode());
 
         if (regionCode == null || regionCode.isEmpty()) {
-            throw new IllegalArgumentException("No Region code found for country: " + countryCode);
+            throw new IllegalArgumentException("No Region code found for country: " + request.getCountryCode());
         }
 
         ShippingCost shippingCost = required.getShippingCostForRegion(regionCode);
@@ -29,14 +26,16 @@ class UseCase implements Provided {
             throw new IllegalArgumentException("No shipping cost found for region: " + regionCode);
         }
 
-        if (weight <= 0) {
-            throw new IllegalArgumentException("Weight must be greater than zero");
-        }
-
         Region region = Region.valueOf(regionCode);
 
         ShippingRegion shippingRegion = ShippingRegionFactory.create(region, shippingCost.getMinCharge(), shippingCost.getCostPerKg());
 
-        return shippingRegion.calculate(weight);
+        double cost = shippingRegion.calculate(request.getWeight());
+
+        return new CalculateShippingResponse(
+                request,
+                regionCode,
+                cost
+        );
     }
 }
