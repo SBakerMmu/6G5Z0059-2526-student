@@ -1,4 +1,4 @@
-package infrastructure;
+package infrastructure.driving;
 
 import applicationcode.usecase.listavailablecountries.Provided;
 
@@ -53,6 +53,7 @@ public class ShippingCostRequestResponseCliAdapter {
     }
 
     public void run() {
+        System.out.format("Calculate Shipping using request response objects:%n");
         Scanner scanner = new Scanner(System.in); // Create a Scanner object
         System.out.format("Select a country to ship to (%s): ", ListOfCountries.map(listAvailableCountries.list()));
         String country = scanner.nextLine();

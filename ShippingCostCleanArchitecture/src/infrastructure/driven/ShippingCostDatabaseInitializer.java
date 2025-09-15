@@ -1,4 +1,4 @@
-package infrastructure;
+package infrastructure.driven;
 
 import applicationcode.usecase.putregion.Country;
 import applicationcode.usecase.putregion.Provided;

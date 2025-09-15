@@ -1,4 +1,4 @@
-package infrastructure;
+package infrastructure.driven;
 
 import java.util.HashMap;
 import java.util.Map;

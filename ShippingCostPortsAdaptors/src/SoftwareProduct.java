@@ -1,8 +1,8 @@
 import applicationcode.Provided;
 import applicationcode.Required;
-import infrastructure.ShippingCostCliAdapter;
-import infrastructure.ShippingCostDatabase;
-import infrastructure.ShippingCostDatabaseAdapter;
+import infrastructure.driving.ShippingCostCliAdapter;
+import infrastructure.driven.ShippingCostDatabase;
+import infrastructure.driven.ShippingCostDatabaseAdapter;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.

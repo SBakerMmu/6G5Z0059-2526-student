@@ -1,4 +1,4 @@
-package infrastructure;
+package infrastructure.driving;
 
 import applicationcode.usecase.calculateshippingrequestresponse.CalculateShippingRequest;
 import applicationcode.usecase.calculateshippingrequestresponse.CalculateShippingResponse;
