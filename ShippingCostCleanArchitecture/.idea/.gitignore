@@ -1,8 +1,5 @@
 ﻿# Default ignored files
 /shelf/
 /workspace.xml
-/copilotDiffState.xml
-/copilot.data.migration.agent.xml
-/copilot.data.migration.edit.xml
-# Environment-dependent path to Maven home directory
+/copilot*
 /mavenHomeManager.xml
