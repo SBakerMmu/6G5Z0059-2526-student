@@ -2,13 +2,13 @@
 
 There are multiple activities each week, and you will probably not get everything done in the timetabled lab sessions; therefore, it is highly recommended that you complete the labs in your own time each week to avoid falling behind.
 
-Completing the **Required** Labs will get you ready for writing the assignment code as well as doing the other labs in the module.
+Completing the labs will get you ready for writing the assignment code.
 
-Completing the **Advanced** Labs will introduce you to more advanced techniques and improve your design skills.
+**Advanced** Labs are optional, but completing the Advanced Labs will introduce you to more advanced techniques and improve your design skills.
 
 These labs are all about getting your development environment set up for the rest of the module and preparing to write your assignment code.
 
-## Get on GitHub and use Git (Required)
+## Get on GitHub and use Git
 > ☑ The use of Git to manage source code is a fundamental skill. The 2021 Stack Overflow Survey suggested that over 93% of developers used Git for managing source code, and that percentage has grown even further since then as legacy projects switch to Git. Use of Git is a key skill for software engineers at any level.
 
 From a command line prompt, run the command `git --version` to see if Git is already installed on your machine.
@@ -19,16 +19,16 @@ Clone the code and labs repository for this module from https://github.com/SBake
 
 `git clone https://github.com/SBakerMmu/6G5Z0059-2526-student.git`.
 
-### Get a GitHub Account (Optional)
+### Get a GitHub Account (Advanced)
 
 Go to https://github.com/ and sign up for a free account. You may already have done this, in which case log in.
 
 Take the Introduction to GitHub tutorial from [GitHub Skills](https://skills.github.com/).
 
-### Install a Git GUI (Optional)
+### Install a Git GUI (Advanced)
 If you have a personal machine, you can use the GitHub Desktop software to work with Git using a graphical user interface (GUI). First, download and install GitHub Desktop from [GitHub Desktop](https://desktop.github.com/). Then, follow the tutorials at [GitHub Desktop Documentation](https://docs.github.com/en/desktop) to learn how to use it.
 
-## Install the IntelliJ Integrated Development Environment (IDE) (Required)
+## Install the IntelliJ Integrated Development Environment (IDE)
 > ☑ In industry, VS Code, Microsoft Visual Studio and JetBrains IntelliJ are the most widely used integrated development environments (IDEs). You have used Eclipse and VS Code in other modules, this will give you exposure to IntelliJ.
 IntelliJ on University Machines
 
@@ -71,7 +71,7 @@ Follow these online tutorials to help you get using IntelliJ.
 - Configure your project.
 
 
-## Get a Coding Standard (Required)
+## Get a Coding Standard
 
 > ☑ A coding standard is a set of rules about code style and naming. Having a consistent coding style makes your code easier to understand and navigate, both for yourself and for others.
 >
@@ -111,7 +111,7 @@ class badStyleClass {
 
 ```
 
-## Write Some Markdown (Required)
+## Write Some Markdown
 
 > ☑ Writing documents in Markdown has become common in software projects because it offers just enough formatting to be useful but requires almost no overhead to write. Markdown files are just text files, so they work well with source code and development tools like Git.
 

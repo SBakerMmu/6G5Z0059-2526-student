@@ -1,6 +1,6 @@
 ﻿# Software Design and Architecture Week01 Lab 02 Worksheet
 
-## Name the parts of a class correctly (Required)
+## Name the parts of a class correctly
 
 Name the parts of this class using the lecture notes, Google style guide and your own research.
 
@@ -55,7 +55,7 @@ public abstract class Student {
 }
 
 ```
-## Write Java class correctly (Required)
+## Write Java class correctly
 
 IntelliJ has a quick and straightforward way of creating a new Java project that we can use for many of the labs.
 
