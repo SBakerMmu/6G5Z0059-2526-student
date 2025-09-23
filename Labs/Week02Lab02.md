@@ -61,7 +61,7 @@ public class Main {
 }
 ```
 
-Now add the access control declarations (public or private) to the Product class to make this code work. The declarations should provide the minimum amount of accessibility necessary to make the client code in the main() method work.
+Now add the package import access control declarations (public or private) to the Product class to make this code work. The declarations should provide the minimum amount of accessibility necessary to make the client code in the main() method work.
 
 ### Hints and Tips
 
@@ -95,12 +95,14 @@ private**.
 We can summarise the effect of access specifiers on members and
 constructors.
 
-| Access Level          | Same Class | Class in Same Package | Subclass in Same Package | Class in Different Package | Subclass in Different Package |
-|-----------------------|------------|-----------------------|--------------------------|----------------------------|-------------------------------|
-| **public**            | Yes        | Yes                   | Yes                      | Yes                        | Yes                           |
-| **protected**         | Yes        | Yes                   | Yes                      | No                         | Yes                           |
-| **default (package)** | Yes        | Yes                   | Yes                      | No                         | No                            |
-| **private**           | Yes        | No                    | No                       | No                         | No                            |
+|                                 | public | protected | default (package private) | private |
+|---------------------------------|--------|-----------|---------------------------|---------|
+| Same class                      | Yes    | Yes       | Yes                       | Yes     |
+| Class in same package           | Yes    | Yes       | Yes                       | No      |
+| Subclass in same package        | Yes    | Yes       | Yes                       | No      |
+| Class in different package      | Yes    | No        | No                        | No      |
+| Subclass in different package   | Yes    | Yes       | No                        | No      |
+
 
 Experiment with the different access specifiers to understand their effects. The IDE or compiler will give you feedback on if a member or constructor is accessible.
 
@@ -112,7 +114,7 @@ Encapsulation at the class level is the hiding of the implementation (fields, pr
 
 A good design of a single class has a long-lived public application programming interface. The clients of that API do not need knowledge of or access to the internal fields and private methods, which means that the internal implementation can change providing the API still behaves as the client expects.
 
-In Java, the concept of encapsulation scales up to the package. The public API offered by the package is the set of all public members of all public classes within the package, but the internal implementation of the package is hidden by using package private classes and package private or private members.
+In Java, the concept of encapsulation scales up to the package. The public API offered by the package is the set of all public members of all public classes within the package, but the internal implementation of the package is hidden by using package private classes and (package) private members.
 
 Encapsulation is one form of **information hiding** - a general principle in software engineering of creating any API (application programming interface) that hides design decisions and reveals as little as possible of the inner workings. Hiding implementation information in general allows us to work with something without having to know about all its internal details and it should be possible to refactor (change for the better) the implementation without a need for the client code to change. Hiding implementation details behind an interface is one of the fundamental ideas of software engineering that helps us cope with complexity and change.
 
