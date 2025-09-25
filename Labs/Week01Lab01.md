@@ -45,8 +45,6 @@ IntelliJ on Personal Machines
 ### IntelliJ on Personal Machines
 If you have a personal laptop or home machine, then download and install the Community Edition from [JetBrains IntelliJ IDEA](https://www.jetbrains.com/idea/download/).
 
-JetBrains offers two versions of IntelliJ: the Ultimate version, which requires a paid license, and the Community Edition, which is free to use. At the time of writing, both versions are available on the download page, so ensure you download and install the correct version.
-
 Go to the Installation Guide page and follow the instructions for "Install IntelliJ IDEA - Standalone installation."
 
 If you have a personal laptop or home machine, then download and install the Community Edition from
