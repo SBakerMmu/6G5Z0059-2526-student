@@ -1,5 +1,6 @@
 ### IntelliJ IDEA ###
-.idea/copilotDiffState.xml
+.idea/
+.idea/copilot*
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/

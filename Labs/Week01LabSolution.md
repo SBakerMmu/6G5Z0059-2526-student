@@ -180,3 +180,36 @@ class TwoDiceRoll {
   }
 }
 ```
+Some test code
+```java
+ public static void main(String[] args) {
+
+  DiceRoll dice1 = new DiceRoll(6);
+  DiceRoll dice2 = new DiceRoll(6);
+  System.out.println(dice1 == dice1);
+  System.out.println(dice2 == dice2);
+  System.out.println(dice1 == dice2);
+  System.out.println(dice1.equals(dice2));
+
+  System.out.println("======");
+  TwoDiceRoll twoDiceRoll1 = new TwoDiceRoll(new DiceRoll(6), new DiceRoll(6));
+  TwoDiceRoll twoDiceRoll2 = new TwoDiceRoll(new DiceRoll(6), new DiceRoll(6));
+  System.out.println(twoDiceRoll1 == twoDiceRoll1);
+  System.out.println(twoDiceRoll2 == twoDiceRoll2);
+  System.out.println(twoDiceRoll1 == twoDiceRoll2);
+  System.out.println(twoDiceRoll1.equals(twoDiceRoll1));
+}
+```
+If you have implemented your classes correctly, the output should be
+
+```Text
+true
+true
+false
+true
+======
+true
+true
+false
+true
+```

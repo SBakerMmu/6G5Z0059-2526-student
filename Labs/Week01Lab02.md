@@ -81,9 +81,10 @@ When run, this outputs:
 Hello, World!
 Process finished with exit code 0
 ```
+### Implement a DiceRoll class
 
-Implement equals(), toString(), and hashCode() for this DiceRoll class.
-You can write your test code in the static main method in the code generated for you by IntelliJ. See hints and tips below.
+In the assignment game we are going to need to roll dice for each player to move. A very simple class that encapsulates the value of a dice roll.
+
 ```java
 
 class DiceRoll {
@@ -95,8 +96,21 @@ class DiceRoll {
 }
 ```
 
-Implement equals(), toString(), and hashCode() for the TwoDiceRoll class.
-You can write your test code in the static main method in the code generated for you by IntelliJ.
+Now implement equals(), toString(), and hashCode() for this DiceRoll class.
+
+You can write your test code in the static main method in the code generated for you by IntelliJ. See hints and tips below.
+```java
+public static void main(String[] args) {
+
+  DiceRoll dice1 = new DiceRoll(6);
+  DiceRoll dice2 = new DiceRoll(6);
+
+  System.out.println(dice1 == dice2);
+  System.out.println(dice1.equals(dice2));
+}
+```
+
+We might want to represent two dice being rolled together 
 
 ```java
 
@@ -110,11 +124,21 @@ private final DiceRoll two;
     }
 }
 ```
+Again, implement equals(), toString(), and hashCode() for the TwoDiceRoll class.
+You can write your test code in the static main method in the code generated for you by IntelliJ.
+
+```java
+
+TwoDiceRoll twoDiceRoll1 = new TwoDiceRoll(new DiceRoll(6), new DiceRoll(6));
+TwoDiceRoll twoDiceRoll2 = new TwoDiceRoll(new DiceRoll(6), new DiceRoll(6));
+System.out.println(twoDiceRoll1 == twoDiceRoll2);
+System.out.println(twoDiceRoll1.equals(twoDiceRoll1));
+```
 ### Hints and Tips
 
 Recall that Java has primitive and reference types.
 
-`==` checks values for primitive types, but only checks the referential equality of two objects (i.e. both sides of the operation are the same instance in memory).
+`==` checks values for primitive types, but tests for referential equality of two objects (i.e. both sides of the == operator both null or both refer to the same object or array).
 
 The default `Object.equals()` method also only checks the referential equality of two objects (i.e. equivalent to ==), so we need to override this default implementation to check the contents of our class.
 
