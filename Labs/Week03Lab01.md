@@ -12,7 +12,7 @@ Week 3 labs are about some key object-oriented techniques – Value Objects and 
 
 Shopping websites usually calculate a shipping charge. To add to the examples of using Value Objects for Full Price, Discount and Discounted Price, design and write a Value Object representing a Shipping and Handling charge (for example for this checkout process)
 
-![Checkout page](img.png)
+![Checkout page](images/week03_checkout1.png)
 
 Write a short example of using your Shipping object in the main method.
 
@@ -108,7 +108,7 @@ public final class ValueObject {
 
 # Implement a Strategy Pattern for Calculating Shipping Costs
 
-![Shipping Page](images/checkout2.png)
+![Shipping Page](images/week03_checkout2.png)
 
 The implementation of a simple book shopping site uses this class to represent the product
 
@@ -290,39 +290,3 @@ interface ShippingCostStrategy {
 ```
 
 Once you have this working, convert your solution to use the ShippingCost Value Object you produced in the first exercise (replacing the double primitive type with a Value Object).
-
-# Identify Candidate Classes for the Simple Frustration Game.
-
-The assessment task is to write a simulation of a prototype physical board game called “Simple Frustration”. Full details are in the assessment brief in Moodle and there is a demo in Lecture 1 that shows an example simulation.
-
-This lab exercise provides some time to identify some possible classes that model the key concepts and relationships within the game
-
-• Entities: Things that represent important concepts or objects in the game
-
-• Attributes: The “data” in Entities, either as primitives or (better) Value Objects
-
-• Relationships between the classes
-
-Some Kinds of classes
-
-• Knowing: Knows and provides information (mostly holding data)
-
-• Service Providing: Performs work on behalf of others (calculations, sending emails)
-
-• Controlling: Makes decisions and delegates to other objects.
-
-The Game also requires several variations. Identify the variations and how you might solve them using Strategies.
-
-Use the lab time to get feedback from the tutors on you candidate classes.
-
-END
-
-Advanced Lab Exercises
-
-The **More Ways of Handling Variation** chapter of the module textbook introduces the **Bridge** pattern.
-
-Implement the example given that deals with Product and ProductPrinter.
-
-All the code is provided, the objective of this advanced lab exercise to understanding how the pattern works.
-
-Although usage of the Bridge pattern is not as common as the strategy pattern, it does solve some difficult design problems, so there is value in being aware of the pattern.

@@ -24,7 +24,7 @@ The Game also requires several variations. Identify the variations and how you m
 
 Use the lab time to get feedback from the tutors on your candidate classes.
 
-# Implement the Bridge Pattern
+# Implement the Bridge Pattern (Advanced)
 
 The **More Ways of Handling Variation** chapter of the module textbook introduces the **Bridge** pattern.
 

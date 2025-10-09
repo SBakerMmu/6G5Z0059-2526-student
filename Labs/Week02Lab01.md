@@ -27,7 +27,7 @@ Hello, World!
 Process finished with exit code 0
 ```
 We are going to implement a simulation of a dice shaker.
-![A Diceshaker](images/diceshaker.png)
+![A Diceshaker](images/week02_diceshaker.png)
 
 Add a DiceShaker interface to your project
 ```java

@@ -1,6 +1,6 @@
 # Software Design and Architecture Labs
 
-![logo.png](logo.png)
+![logo.png](images/logo.png)
 
 Welcome to the Software Design and Architecture module labs. Below are links to all lab worksheets and resources:
 
@@ -14,3 +14,6 @@ Please refer to each worksheet for instructions and exercises for the correspond
 - [Lab 01 - Interface implementation](Week02Lab01.md)
 - [Lab 02 - Packages and accessibility](Week02Lab02.md)
 
+## Week 03 Labs
+- [Lab 01 - Value Objects, Strategy](Week03Lab01.md)
+- [Lab 02 - Identify classes in the Simple Frustration Game](Week03Lab02.md)
