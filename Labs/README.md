@@ -1,5 +1,7 @@
 # Software Design and Architecture Labs
 
+![logo.png](logo.png)
+
 Welcome to the Software Design and Architecture module labs. Below are links to all lab worksheets and resources:
 
 Please refer to each worksheet for instructions and exercises for the corresponding week.
