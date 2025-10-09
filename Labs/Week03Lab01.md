@@ -12,7 +12,7 @@ Week 3 labs are about some key object-oriented techniques – Value Objects and 
 
 Shopping websites usually calculate a shipping charge. To add to the examples of using Value Objects for Full Price, Discount and Discounted Price, design and write a Value Object representing a Shipping and Handling charge (for example for this checkout process)
 
-![Checkout page](images/checkout1.png)
+![Checkout page](img.png)
 
 Write a short example of using your Shipping object in the main method.
 
