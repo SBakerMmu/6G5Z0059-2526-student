@@ -146,4 +146,56 @@ Interfaces are key to writing extensible and flexible code because:
 
 - the choice of which concrete type supplies the interface implementation can be made at runtime, allowing us to vary behaviour based on some runtime condition (such as user input, choice of operating system, production or test mode...)
 
+# Testing for Equality using the instanceof operator and the getClass() method (Advanced)
+
+There are two common ways of testing for an object's concrete type in `equals()` Java - using the `instanceof` operator and using the `getClass()` method.
+
+Using `getClass()`
+
+```java
+class A {
+    final int a;
+
+    public A(int a) {
+        this.a = a;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        A other = (A) o;
+        return a == other.a;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(a);
+   }
+}
+```
+Using `instanceof`
+```java
+class A {
+    final int a;
+
+    public A(int a) {
+        this.a = a;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof A other)) return false;
+        return a == other.a;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(a);
+    }
+}
+```
+
+**Question 1**: What is the difference between these two approaches? Why would you choose one over the other?
+
+**Question 2**: How does `getClass() != o.getClass()` (which is just the same as `!(getClass() == o.getClass())` ) if the '==' operator tests for referential equality of two objects (i.e. both sides of the == operator both null or both refer to the same object or array)?
 

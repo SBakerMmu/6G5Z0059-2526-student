@@ -239,3 +239,79 @@ The client code doesn’t care if the concrete class is implemented using inheri
 DiceShaker shaker = new ConcreteSingleDiceShaker();
 shaker = new FixedSingleDiceShaker();
 ```
+
+# Testing for Equality using the instanceof operator and the getClass() method (Advanced)
+
+We what is the difference between these two approaches and why would you choose one over the other?
+
+Using `getClass()`
+
+```java
+class A {
+    final int a;
+
+    public A(int a) {
+        this.a = a;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        A other = (A) o;
+        return a == other.a;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(a);
+   }
+}
+```
+Using `instanceof`
+```java
+class A {
+    final int a;
+
+    public A(int a) {
+        this.a = a;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof A other)) return false;
+        return a == other.a;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(a);
+    }
+}
+```
+
+When you use getClass() you are saying that two objects are only equal if they are of the exact same class. This means that if you have a subclass of A, instances of that subclass will not be considered equal to instances of A, even if they have the same value for the field a.
+
+When you use instanceof, you are saying that two objects can be considered equal if one is an instance of the class A or any of its subclasses. This means that if you have a subclass of A, instances of that subclass can be considered equal to instances of A, as long as they have the same value for the field a.
+
+```java
+public class B extends  A{
+    public B(int a) {
+        super(a);
+    }
+}
+```
+If we subclass A then we get different behaviour
+```java
+A a = new A(1);
+B b = new B(1);
+//using instanceof
+System.out.println(a.equals(b)); // true
+//using getClass()
+System.out.println(a.equals(b)); // false
+```
+When to choose one over the other depends on your design (there is no simple one approach is better than the other answer).
+
+- If you want strict equality based on the exact class, use getClass().
+- If you want to test logical equality (based on the state of the object) and you want to allow subclasses to be considered equal, use instanceof.
+
+`getClass() != o.getClass()` must be returning the same instance of something as this a reference equality test. `getClass` returns an instance of the `Class` object based the runtime object.
