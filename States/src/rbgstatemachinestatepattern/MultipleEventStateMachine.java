@@ -1,6 +1,6 @@
 package rbgstatemachinestatepattern;
 
-class MultipleEventStateMachine implements Context {
+class   MultipleEventStateMachine implements Context {
     private State currentState;
 
     MultipleEventStateMachine() {
