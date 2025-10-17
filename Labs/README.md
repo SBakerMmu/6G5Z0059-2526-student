@@ -19,3 +19,8 @@ Please refer to each worksheet for instructions and exercises for the correspond
 ## Week 03 Labs
 - [Lab 01 - Value Objects, Strategy](Week03Lab01.md)
 - [Lab 02 - Identify classes in the Simple Frustration Game](Week03Lab02.md)
+- [Solution](Week03LabSolution.md)
+
+## Week 04 Labs
+- [Lab 01 - Singletons](Week04Lab01.md)
+- [Lab 02 - Factories](Week04Lab02.md)
