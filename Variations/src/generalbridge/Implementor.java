@@ -1,5 +1,5 @@
 package generalbridge;
 
 interface Implementor {
-    void operationImplementation();
+    void operationImplementation(String abstraction);
 }

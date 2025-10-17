@@ -1,33 +1,34 @@
 package bridgeproduct;
 
+import valueobjects.ASIN;
+import valueobjects.GTIN13;
+import valueobjects.InvalidException;
+import valueobjects.Price;
+
 public final class Example {
 
     public static void run() {
 
+
+        //The two concrete Product implementations are in control of the format of a Bag label and Price ticket
+        //New Printer implementations can be added without changing the Product classes and new Product types can be added without changing the Printer classes
+        Price price = new Price(100.0d);
+        BagLabelPrinter bagLabelPrinter = new BagLabelPrinter();
+        PriceTicketPrinter priceTicketPrinter = new PriceTicketPrinter();
+
         try {
-
-
-            FullPrice fullPrice = new FullPrice(100.0d);
-            MinimumPrice minimumPrice = new MinimumPrice(75.0d);
-            TaxCalculation standardTax = new StandardTax();
-
-            print(new AmazonProduct(new ASIN("B09P4L33SW"), fullPrice, minimumPrice, standardTax), new BagLabelPrinter());
-            print(new RetailProduct(new GTIN13(new CompanyPrefix(705353), new ItemReference(135569)), fullPrice, minimumPrice, standardTax),  new PriceTicketPrinter());
-
-            print(new AmazonProductFactory(), "B09P4L33SW", fullPrice, minimumPrice, standardTax, new PriceTicketPrinter());
-            print( new RetailProductFactory(), "705353135569", fullPrice, minimumPrice, standardTax, new BagLabelPrinter());
-
-        } catch (InvalidException ex) {
-            System.out.format("%s/n", ex);
+            print(new AmazonProduct(ASIN.parse("B09P4L33SW"), price, bagLabelPrinter));
+            print(new AmazonProduct(ASIN.parse("B09P4L33SW"), price, priceTicketPrinter));
+            print(new RetailProduct(GTIN13.parse("705353", "135569"), price, bagLabelPrinter));
+            print(new RetailProduct(GTIN13.parse("705353", "135569"), price, priceTicketPrinter));
+        } catch (InvalidException e) {
+            System.out.println("Invalid: " + e.getMessage());
         }
     }
 
-    private static void print(ProductFactory productFactory, String code, FullPrice fullPrice, MinimumPrice minimumPrice, TaxCalculation taxCalculation, ProductPrinter printer) throws InvalidException {
-        print(productFactory.create(code, fullPrice, minimumPrice, taxCalculation), printer);
-    }
 
-    private static void print(Product product, ProductPrinter printer) {
-        product.print(printer);
+    private static void print(Product product) {
+        product.print();
     }
 
 }

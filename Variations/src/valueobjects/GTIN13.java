@@ -1,4 +1,4 @@
-package bridgeproduct;
+package valueobjects;
 
 import java.util.Objects;
 
@@ -8,13 +8,22 @@ public final class GTIN13 {
     private final ItemReference itemReference;
     private final int checksum;
 
-    public GTIN13(CompanyPrefix prefix, ItemReference itemReference) throws InvalidException {
+    GTIN13(CompanyPrefix prefix, ItemReference itemReference) throws InvalidException {
         this.prefix = prefix;
         this.itemReference = itemReference;
         this.checksum = calculateGtinCheckDigit(String.format("%s%s", this.prefix, this.itemReference));
         //post condition is that we have created a valid string representation
         requireValidGlobalTradeIdentifierString(this.toString());
     }
+
+
+    public static GTIN13 parse(String companyPrefix, String itemReference) throws InvalidException {
+
+        CompanyPrefix prefix = new CompanyPrefix(Integer.parseInt(companyPrefix.substring(0, CompanyPrefix.LENGTH)));
+        ItemReference reference = new ItemReference(Integer.parseInt(itemReference));
+        return new GTIN13(prefix, reference);
+    }
+
 
     public static GTIN13 parse(String s) throws InvalidException {
 

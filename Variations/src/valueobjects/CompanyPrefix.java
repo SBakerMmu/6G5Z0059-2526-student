@@ -1,15 +1,15 @@
-package bridgeproduct;
+package valueobjects;
 
 import java.util.Objects;
 
-public final class ItemReference {
-
+public final class CompanyPrefix {
     public static final int LENGTH = 6;
-    private static final int MIN = 1;
+    private static final int MIN = 100000; //there is a rule about GS1 Company Prefixes being > 100000
     private static final int MAX = 999999;
     private final int value;
 
-    public ItemReference(int value) throws InvalidNumberRangeException {
+
+    public CompanyPrefix(int value) throws InvalidNumberRangeException {
         if (value < MIN || value > MAX) {
             throw new InvalidNumberRangeException(value, MIN, MAX);
         }
@@ -28,7 +28,7 @@ public final class ItemReference {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ItemReference that = (ItemReference) obj;
+        CompanyPrefix that = (CompanyPrefix) obj;
         return value == that.value;
     }
 

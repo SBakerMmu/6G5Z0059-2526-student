@@ -1,32 +1,24 @@
 package bridgeproduct;
 
+import valueobjects.Price;
+
 public abstract class Product {
+    private final Price price;
+    private final ProductPrinter printer;
 
-    private final MinimumPrice minimumPrice;
-    private final TaxCalculation taxCalculation;
-    private SellingPrice sellingPrice;
-
-    protected Product(FullPrice price, MinimumPrice minimumPrice, TaxCalculation taxCalculation) {
-        this.sellingPrice = price;
-        this.minimumPrice = minimumPrice;
-        this.taxCalculation = taxCalculation;
+    protected Product(Price price, ProductPrinter printer) {
+        this.price = price;
+        this.printer = printer;
     }
 
-    public void applyDiscount(Discount discount) {
-
-        sellingPrice = sellingPrice.applyDiscount(minimumPrice, discount);
-    }
-
-    public void removeDiscount() {
-
-        sellingPrice = sellingPrice.removeDiscount();
+    public ProductPrinter getPrinter() {
+        return printer;
     }
 
     public Price getPrice() {
-        Price sellingPriceExcludingTax = sellingPrice.get();
-        Tax tax = taxCalculation.get(sellingPriceExcludingTax);
-        return new Price(sellingPriceExcludingTax.get() + tax.get());
+        return price;
     }
 
-    public abstract void print(ProductPrinter printer);
+    public abstract void print();
+
 }

@@ -8,7 +8,7 @@ class RefinedAbstraction1 extends Abstraction {
     @Override
     public void operation() {
         //Do something specific to RefinedAbstraction1
-        implementor.operationImplementation();
+        implementor.operationImplementation("Hello from Abstraction 1");
 
     }
 }

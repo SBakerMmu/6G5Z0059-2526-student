@@ -1,13 +1,18 @@
 package bridgeproduct;
 
-class PriceTicketPrinter implements ProductPrinter {
+import valueobjects.Price;
+
+class PriceTicketPrinter extends AbstractPrinter {
+
+    private static final String PRINTER_TYPE  = "PRICE TICKET";
     @Override
-    public void print(AmazonProduct product) {
-        System.out.format("Price Ticket for Amazon ASIN:%s Price:%s%n", product.getAsin(), product.getPrice());
+    public void printHeader() {
+        printHeader(PRINTER_TYPE);
     }
 
     @Override
-    public void print(RetailProduct product) {
-        System.out.format("Price Ticket for Retail GTIN:%s Price:%s%n", product.getGtin(), product.getPrice());
+    public void printFooter() {
+        printFooter(PRINTER_TYPE);
     }
+
 }

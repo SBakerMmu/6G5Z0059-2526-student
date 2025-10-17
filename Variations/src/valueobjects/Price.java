@@ -1,6 +1,6 @@
-package bridgeproduct;
+package valueobjects;
 
-class Price {
+public class Price {
     static final double NO_PRICE = 0.0d;
     final private double price;
 
@@ -19,6 +19,6 @@ class Price {
 
     @Override
     public String toString() {
-        return String.format("%f", price);
+        return String.format("£%.2f", price);
     }
 }

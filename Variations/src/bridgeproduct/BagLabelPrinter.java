@@ -1,13 +1,18 @@
 package bridgeproduct;
 
-class BagLabelPrinter implements ProductPrinter {
+import valueobjects.Price;
+
+class BagLabelPrinter extends AbstractPrinter {
+
+    private static final String PRINTER_TYPE  = "BAG LABEL";
     @Override
-    public void print(AmazonProduct product) {
-        System.out.format("Bag Label for Amazon ASIN:%s Price:%s%n", product.getAsin(), product.getPrice());
+    public void printHeader() {
+        printHeader(PRINTER_TYPE);
     }
 
     @Override
-    public void print(RetailProduct product) {
-        System.out.format("Bag Label for Retail GTIN:%s Price:%s%n", product.getGtin(), product.getPrice());
+    public void printFooter() {
+        printFooter(PRINTER_TYPE);
     }
+
 }

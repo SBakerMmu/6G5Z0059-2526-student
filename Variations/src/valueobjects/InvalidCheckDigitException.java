@@ -1,4 +1,4 @@
-package bridgeproduct;
+package valueobjects;
 
 public class InvalidCheckDigitException extends InvalidException {
     public final String invalidString;

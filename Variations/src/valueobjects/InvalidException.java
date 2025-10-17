@@ -1,4 +1,4 @@
-package bridgeproduct;
+package valueobjects;
 
 public abstract class InvalidException extends Exception {
     public InvalidException() {

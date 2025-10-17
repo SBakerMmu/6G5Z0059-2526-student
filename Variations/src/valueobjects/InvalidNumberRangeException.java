@@ -1,4 +1,4 @@
-package bridgeproduct;
+package valueobjects;
 
 public class InvalidNumberRangeException extends InvalidException {
     public final int value;

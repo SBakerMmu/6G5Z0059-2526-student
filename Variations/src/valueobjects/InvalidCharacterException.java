@@ -1,4 +1,4 @@
-package bridgeproduct;
+package valueobjects;
 
 public class InvalidCharacterException extends InvalidException {
     public final String invalidString;

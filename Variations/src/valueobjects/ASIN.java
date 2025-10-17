@@ -1,4 +1,4 @@
-package bridgeproduct;
+package valueobjects;
 
 import java.util.Objects;
 
@@ -6,7 +6,7 @@ public final class ASIN {
     public static final int LENGTH = 10;
     private final String id;
 
-    public ASIN(String id) throws InvalidException {
+    private ASIN(String id) throws InvalidException {
 
         if (!isValidLength(id)) {
             throw new InvalidLengthException(id, LENGTH);

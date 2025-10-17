@@ -1,4 +1,4 @@
-package bridgeproduct;
+package valueobjects;
 
 public class InvalidLengthException extends InvalidException {
     public final String invalidString;
