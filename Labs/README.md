@@ -24,3 +24,8 @@ Please refer to each worksheet for instructions and exercises for the correspond
 ## Week 04 Labs
 - [Lab 01 - Singletons](Week04Lab01.md)
 - [Lab 02 - Factories](Week04Lab02.md)
+- [Solution](Week04LabSolution.md)
+
+## Week 05 Labs
+- [Lab 01 - Decorators](Week05Lab01.md)
+- [Lab 02 - Observers](Week05Lab02.md)
