@@ -1,11 +1,11 @@
-package timeadaptor;
+package timeadapter;
 
 
-class AtomicTimeSourceAdaptor implements YearMonthProvider {
+class AtomicTimeSourceAdapter implements YearMonthProvider {
 
     private final AtomicTimeSource source;
 
-    public AtomicTimeSourceAdaptor(AtomicTimeSource source) {
+    public AtomicTimeSourceAdapter(AtomicTimeSource source) {
         this.source = source;
     }
 

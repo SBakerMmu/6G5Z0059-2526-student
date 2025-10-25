@@ -1,4 +1,4 @@
-package generaladaptor;
+package generaladapter;
 
 class Adaptee {
     public void operation2() {

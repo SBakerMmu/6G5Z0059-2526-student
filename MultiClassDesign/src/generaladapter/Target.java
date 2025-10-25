@@ -1,4 +1,4 @@
-package generaladaptor;
+package generaladapter;
 
 interface Target {
 

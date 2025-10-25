@@ -1,4 +1,4 @@
-package generaladaptor;
+package generaladapter;
 
 public final class Example {
 

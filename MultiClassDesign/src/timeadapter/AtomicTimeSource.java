@@ -1,4 +1,4 @@
-package timeadaptor;
+package timeadapter;
 
 class AtomicTimeSource
 {

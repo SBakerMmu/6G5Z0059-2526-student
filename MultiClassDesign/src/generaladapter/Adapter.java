@@ -1,4 +1,4 @@
-package generaladaptor;
+package generaladapter;
 
 class Adapter implements Target {
 
