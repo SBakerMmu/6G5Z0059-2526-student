@@ -100,3 +100,4 @@ Singletons are intended to be single primitive value or single object instance w
 
 In Java static fields can be used to hold constant primitive values or a single instance of an immutable class. If the value is constant, we use the CONSTANT\_NAME naming convention.
 
+``
