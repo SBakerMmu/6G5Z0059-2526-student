@@ -2,11 +2,9 @@ package infrastructure.driven;
 
 import applicationcode.Region;
 
-import java.util.EnumMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
+//Simulate a database with in-memory data structures
 public class ShippingCostDatabase {
     public final Set<Region> regions = new HashSet<>();
     public final Map<Region, Double> costPerKgMap = new EnumMap<>(Region.class);

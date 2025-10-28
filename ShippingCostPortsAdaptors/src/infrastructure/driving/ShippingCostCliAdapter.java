@@ -16,8 +16,8 @@ import java.util.Scanner;
 
         Scanner scanner = new Scanner(System.in); // Create a Scanner object
 
-        System.out.print("Select a region to ship to (UK, EUR, ROW): ");
-        String region = scanner.nextLine();
+        System.out.format("Select a region to ship to (UK, EUR, ROW): %n");
+        String region = scanner.next();
         System.out.print("Enter the weight of the package in kg: ");
         double weight = scanner.nextDouble();
 
