@@ -29,3 +29,8 @@ Please refer to each worksheet for instructions and exercises for the correspond
 ## Week 05 Labs
 - [Lab 01 - Decorators](Week05Lab01.md)
 - [Lab 02 - Observers](Week05Lab02.md)
+- [Solution](Week05LabSolution.md)
+
+## Week 06 Labs
+- [Lab 01 - Facades](Week06Lab01.md)
+- [Lab 02 - Mediators](Week06Lab02.md)
