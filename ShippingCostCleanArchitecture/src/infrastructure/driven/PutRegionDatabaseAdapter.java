@@ -4,10 +4,10 @@ package infrastructure.driven;
 
 import applicationcode.usecase.putregion.Country;
 import applicationcode.usecase.putregion.Region;
-
+import applicationcode.usecase.putregion.Required;
 import java.util.Set;
 
-public class PutRegionDatabaseAdapter implements applicationcode.usecase.putregion.Required
+public class PutRegionDatabaseAdapter implements Required
 {
 
     private final ShippingCostDatabase database;

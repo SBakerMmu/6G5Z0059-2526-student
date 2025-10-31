@@ -3,7 +3,6 @@ package infrastructure.driven;
 import applicationcode.usecase.putregion.Country;
 import applicationcode.usecase.putregion.Provided;
 import applicationcode.usecase.putregion.Region;
-
 import java.util.List;
 import java.util.Set;
 
@@ -14,7 +13,7 @@ public class ShippingCostDatabaseInitializer {
         this.putRegions = putRegions;
     }
         // Define regions and their properties
-    public void run(){
+    public void initializeDb(){
 
         Region uk = new Region("UK", "United Kingdom", 0.0, 0.0);
         uk.addCountry(new Country("GB", "United Kingdom"));

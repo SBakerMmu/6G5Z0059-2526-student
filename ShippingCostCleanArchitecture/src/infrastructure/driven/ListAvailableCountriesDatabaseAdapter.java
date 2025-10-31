@@ -2,8 +2,9 @@ package infrastructure.driven;
 
 
 import java.util.Set;
+import applicationcode.usecase.listavailablecountries.Required;
 
-public class ListAvailableCountriesDatabaseAdapter implements applicationcode.usecase.listavailablecountries.Required
+public class ListAvailableCountriesDatabaseAdapter implements Required
 {
 
     private final ShippingCostDatabase database;
