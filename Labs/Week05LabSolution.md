@@ -1,7 +1,7 @@
 # Software Design and Architecture - Week 05 Lab Solutions
 
 ## Using Decorators to implement different Dice Shakers
-We asked you to use the **Decorator** pattern to decorate an implementation of a RandomSingleDiceShaker to simulate a shaker with 2 (or more) six-sided dice. 
+We asked you to use the **Decorator** pattern to decorate an implementation of a RandomSingleDiceShaker to simulate a shaker with 2 (or more) six-sided dice.
 
 We start with the `DiceShaker` interface
 
@@ -83,7 +83,7 @@ int value = shaker.shake();
 ```
 However, we can just as easily write a decorator that logs the throw to the console.
 
-Each decorator is responsible for one thing only, but we have added multiple functionalities to our chain. 
+Each decorator is responsible for one thing only, but we have added multiple functionalities to our chain.
 
 ```java
 class ConsoleWriter implements DiceShaker{
@@ -116,7 +116,7 @@ int value = shaker.shake();
 ```
 We could end up repeating the code that builds the pipeline. We have seen this problem before.
 
-Solve this with a set of abstract factories that create the pipelines of different lengths. Note how we are aggregated factories so we are reusing code rather than reimplementing it. 
+Solve this with a set of abstract factories that create the pipelines of different lengths. Note how we are aggregated factories so we are reusing code rather than reimplementing it.
 
 ```java
 interface DiceShakerFactory {
@@ -172,7 +172,7 @@ private static void show(DiceShakerFactory factory) {
     shaker.shake();
 }
 ```
-Decorators provide a form of subclassing. 
+Decorators provide a form of subclassing.
 
 In Java subclassing the subclass extends the superclass and can add or replace functionality provided by the superclass. Using conventional subclassing the functionality is decided at compile time. With decorators, the functionality is decided dynamically at runtime by adding one or more decorators.
 
@@ -185,6 +185,55 @@ This pattern is called the **Chain of Responsibility** pattern or sometimes the 
 Decorators provide us with a way of enhancing (adding or changing functionality) an operation. Chains of Responsibility allow different classes to handle an operation. These components can be chained together to make a **Pipeline** for handling an operation requested by a client.
 
 In large-scale software systems there is often functionality that we want to add to our code that has nothing to do with the core business functionality. Chaining components can help us satisfy these requirements.
+
+## Implementing Dice Shaker Decorators using the Null Object Pattern
+The implementation above uses two concrete classes - SingleDiceShaker and DiceShakerDecorator. There is a design solution that uses only one concrete class by using the **Null Object** pattern.
+
+If we create an implementation of DiceShaker that optionally takes another DiceShaker to decorate, we can use a **Null Object** when no decoration is required.
+
+```Java
+class SingleDiceShaker implements DiceShaker {
+
+    private static class NullShaker implements DiceShaker {
+        public int shake() {
+            return 0;
+        }
+    }
+
+    private final Random random = new Random();
+    private final DiceShaker component;
+
+    public SingleDiceShaker() {
+        this.component = new SingleDiceShaker.NullShaker();
+    }
+
+    public SingleDiceShaker(DiceShaker component) {
+        this.component = component;
+    }
+
+    @Override
+    public int shake() {
+        //generate number between 1 and 6
+        return (random.nextInt(6) + 1) + component.shake();
+    }
+}
+```
+In this implementation, there are two constructors, one that takes an external component and one that doesn't (the parameterless constructor).
+
+However, in the parameterless constructor we provide a **Null Object** which works with the `int shake()` method but returns a "null" value (which in this case is 0).
+
+We could have used `null` instead of a Null Object, but then we would have to check for null in the `shake()` method, which would add complexity to the code.
+
+The implementation uses a private nested class to implement (`NullShaker`) the Null Object which is private, but it could be a separate class if required.
+
+### The Null Object Patten.
+The **Null Object** pattern is a design pattern that provides an object as to represent the lack of an object (which would otherwise leave us testing for null value).
+
+The special "null" implementation conforms to the expected interface but does nothing. Obviously the null implementation must **conform** and be substitutable for non-null implementations. In this case returning 0 from the `shake()` method is appropriate as it does not affect the total value of the dice shake.
+
+Consider using the Null Object pattern when you have to test for `null` values in your code or are using `Optional<T>` types, and testing for the presence or absence of T.
+
+
 
 ## Using Observers to observe Game Events
 We proposed a simple game board with the following positions.
