@@ -224,16 +224,14 @@ However, in the parameterless constructor we provide a **Null Object** which wor
 
 We could have used `null` instead of a Null Object, but then we would have to check for null in the `shake()` method, which would add complexity to the code.
 
-The implementation uses a private nested class to implement (`NullShaker`) the Null Object which is private, but it could be a separate class if required.
+The implementation uses a private nested class  (`NullShaker`) to implement the Null Object, but it could be a separate package private class if required.
 
 ### The Null Object Patten.
-The **Null Object** pattern is a design pattern that provides an object as to represent the lack of an object (which would otherwise leave us testing for null value).
+The **Null Object** pattern is a design pattern that provides an object to represent the lack of an object, which would otherwise leave us testing for null value.
 
 The special "null" implementation conforms to the expected interface but does nothing. Obviously the null implementation must **conform** and be substitutable for non-null implementations. In this case returning 0 from the `shake()` method is appropriate as it does not affect the total value of the dice shake.
 
 Consider using the Null Object pattern when you have to test for `null` values in your code or are using `Optional<T>` types, and testing for the presence or absence of T.
-
-
 
 ## Using Observers to observe Game Events
 We proposed a simple game board with the following positions.
