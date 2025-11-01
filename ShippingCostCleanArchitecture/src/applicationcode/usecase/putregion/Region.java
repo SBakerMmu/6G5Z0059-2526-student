@@ -35,7 +35,7 @@ public class Region {
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof Region region)) return false;
-        return Objects.equals(code, region.code);
+        return code.equalsIgnoreCase(region.code);
     }
 
     @Override
