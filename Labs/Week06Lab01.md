@@ -57,7 +57,7 @@ class GameBoard {
     private static final int LENGTH = END - HOME + 1;
     private int index;
 
-    NonObservedGameBoard() {
+    GameBoard() {
         setIndex(HOME);
     }
 
