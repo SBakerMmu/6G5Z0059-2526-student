@@ -34,3 +34,7 @@ Please refer to each worksheet for instructions and exercises for the correspond
 ## Week 06 Labs
 - [Lab 01 - Facades](Week06Lab01.md)
 - [Lab 02 - Mediators](Week06Lab02.md)
+- [Solution](Week06LabSolution.md)
+
+## Week 07 Labs
+- [Lab 01 - States](Week07Lab01.md)
