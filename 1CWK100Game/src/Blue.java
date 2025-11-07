@@ -1,8 +1,6 @@
 class Blue {
-
     private final static int START_OF_TAIL_INDEX = 18;
     private final static int END_OF_TAIL_INDEX = 20;
-
     private static final int[] POSITIONS = new int[]{
             10, 11, 12, 13, 14, 15, 16, 17, 18, 1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 2, 3
     };
@@ -46,11 +44,5 @@ class Blue {
         if (currentIndex > END_OF_TAIL_INDEX) {
             currentIndex = END_OF_TAIL_INDEX;
         }
-    }
-
-    public boolean isHit(Red red) {
-        if (this.isInBody() && red.isInBody()) {
-            return this.getPosition() == red.getPosition();
-        } else return false;
     }
 }
