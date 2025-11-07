@@ -1,4 +1,4 @@
-# 1CWK100 Cleann Architecture Starter Code
+# 1CWK100 Clean Architecture Starter Code
 
 
 The main() method launches the Spring Boot application.
@@ -17,7 +17,7 @@ public class GameApplication {
 
 The Spring Boot application scans for components (any class annotated with `@Component`) and configuration classes (any class annotated with `@Configuration`)in the same package and sub-packages of the class with the main() method.
 
-Classes annotated with `@Configuration` are used to define Beans that will be managed by the Spring Boot application. Beans are objects that are instantiated, assembled, and otherwise managed by a Spring DI container.
+Classes annotated with `@Configuration` are used to define Beans that will be managed by the Spring Boot application. Beans are objects that are instantiated, assembled and  managed by the Spring dependency injection (DI) container.
 ```Java
 @Configuration
 public class AppConfig
@@ -45,9 +45,9 @@ public class AppConfig
 }
 ```
 
-Classes annotated with `@Component` and `implementing org.springframework.boot.CommandLineRunner` will be automatically run by the Spring Boot application SprintBoot will pass any dependencies required into the class constructor.
+Classes annotated with `@Component` and that implementing `org.springframework.boot.CommandLineRunner` will be automatically run by the Spring Boot application. Spring Boot will pass any dependencies required into the class constructor.
 
-As we have more than one class implementing CommandLineRunner we also implement the Ordered interface to control the order in which they are run.
+As we have more than one class implementing CommandLineRunner we also need to implement the Ordered interface to control the order in which they are run.
 
 ```Java
 import uk.ac.mmu.game.applicationcode.usecase.play.Provided;
