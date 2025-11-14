@@ -6,5 +6,6 @@ public class Main {
         extendedstatemachine.Example.run();
         orderstatemachine.Example.run();
         generalstatepattern.Example.run();
+        gamestates.Example.run();
     }
 }
