@@ -240,7 +240,7 @@ This shows that the Spring DI container has successfully injected an instance of
 >
 >  `public String toString() { return getClass().getName() + "@" + Integer.toHexString(hashCode());`
 >
-> Because we have not overridden the `hashCode()` method the default implementation from the Object class is used, which typically returns a value based on the object's memory address. This is why you will see different values to the value in the labsheet, and different values each time you run the application.
+> Because we have not overridden the `hashCode()` method the default implementation from the Object class is used, which typically returns a value based on the object's memory address. This is why you will see different values to the value in the lab sheet, and different values each time you run the application.
 >
 > For our purposes, we can the default implementation of `hashCode()` to return an instance identifier for the object, so the toString() output shows both the class name and a unique identifier for the instance.
 
@@ -577,3 +577,10 @@ class BeanProcessor implements BeanPostProcessor, Ordered {
 This is an example of the Spring DI container being extended to provide custom functionality. The Container is closed for modification but open for extension (follows the Open/Closed Principle).
 
 
+## Using Spring Shell (Advanced)
+
+This is very optional. In our examples so far, we have used the CommandLineRunner interface to run code when the application starts and this is fine for our examples and for supporting the assessment code.
+
+However, Spring Boot also supports a more interactive approach using Spring Shell. This allows you to create a command-line interface (CLI) for your application where you can type commands to execute different functions. If you are comfortable with Spring Boot and want to explore further, you can look into using Spring Shell to create an interactive CLI.
+
+See [Spring Shell Documentation](https://docs.spring.io/spring-shell/reference/index.html).
