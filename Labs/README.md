@@ -43,3 +43,8 @@ Please refer to each worksheet for instructions and exercises for the correspond
 ## Week 08 Labs
 - [Lab 01 - DI Using Code](Week08Lab01.md)
 - [Lab 02 - DI Using Spring](Week08Lab02.md)
+- [Solution](Week08LabSolution.md)
+
+## Week 09 Labs
+- [Lab 01 - Ports and Adapters](Week09Lab01.md)
+- [Lab 02 - Persistence Ports](Week09Lab02.md)
