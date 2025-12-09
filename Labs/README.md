@@ -56,4 +56,4 @@ Please refer to each worksheet for instructions and exercises for the correspond
 - [Solution](Week10LabSolution.md)
 
 ## Week 11 Labs
-- [Assessment Support, Checklist and FAQs](Week11FAQ.md)
+- [Assessment Support, Checklist and FAQs](Week11Faq.md)
