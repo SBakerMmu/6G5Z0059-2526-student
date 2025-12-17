@@ -7,7 +7,7 @@ All labs, lab solutions and code examples are available from the [Student Git Re
 
 The notes that go with the lectures are in the [Software Design and Architecture Textbook](https://github.com/SBakerMmu/6G5Z0059-2526-student/wiki).
 
-If you are stuck getting started with the assessment task components, there are two projects in the Student Git Repo to help: 
+If you are stuck getting started with the assessment task components, there are two projects in the Student Git Repo to help:
 
 - **1CWK100Game** contains some hints and stater code about writing the game logic
 - **1CWK100Architecture** contains a starter project for a Clean Architecture implementation of your game
@@ -29,11 +29,18 @@ No, there are a large number of combinations of variations, but it is only neces
 
 - Show your 1 and 2 dice variations using random dice
 - It is much easier to develop and demonstrate the game features such as the END rules using a sequence of dice rolls.
- 
+
 ## The game can get stuck with Exact End rules and 2 dice, because the minimum value of 2 dice is 2.
 
 - If using random dice you will need to put some sort of check around the game to terminate it if the number of turns exceeds some sensible number.
-- If you use fixed dice sequences then you can demonstrate Exact End rules, carefully choosing your dice sequences to avoid the problem. 
+- If you use fixed dice sequences then you can demonstrate Exact End rules, carefully choosing your dice sequences to avoid the problem.
+
+## Can I overwrite my game file on save
+
+Yes, you either create a new file each time or overwrite the existing file. The requirement is to replay a previously saved game, so it's fine to just replay a game from the most recent session.
+
+You could (for higher marks) implement different persistence strategies (for example, saving to different files, or saving in different formats such as JSON or just persisting in memory) and use Spring Dependency Injection to choose one persistence strategy at runtime. Ways of doing this were covered in the labs.
+
 
 ## Can I submit my code via GitHub
 No, the University requires that you submit via Moodle, because this is how we know if you have met the submission deadline or not.
@@ -42,20 +49,20 @@ Your submission should be in the form of a ZIP file containing:
 - The complete source code for your submission as an IntelliJ project.
 - A readme file written in Markdown.
 
-- Please name your submission file as 
+- Please name your submission file as
 Firstname_Lastname_StudentIDNumber.zip (Example: Steve_Williams_12345678.zip).
 
-Moodle submission inboxes cannot accept files larger than 100 MB. It is unlikely that you will exceed this for this assessment. 
+Moodle submission inboxes cannot accept files larger than 100 MB. It is unlikely that you will exceed this for this assessment.
 
-Should you need to submit files exceeding this size you are required to upload your project to your university-supplied OneDrive account and submit a link as part of the package you submit to Moodle (e.g., pasted into a text file). 
+Should you need to submit files exceeding this size you are required to upload your project to your university-supplied OneDrive account and submit a link as part of the package you submit to Moodle (e.g., pasted into a text file).
 
 Prior to submission via Moodle, please ensure that you archive your project folders into a zip file and upload them to your OneDrive account.
 
-If submitting via OneDrive, ensure that your tutors `steve.baker@mmu.ac.uk` and `ashley.williams@mmu.ac.uk` have access to the work. **Do not** alter your work after the deadline.   
+If submitting via OneDrive, ensure that your tutors `steve.baker@mmu.ac.uk` and `ashley.williams@mmu.ac.uk` have access to the work. **Do not** alter your work after the deadline.
 
 *We are trialling submission by GitHub in another module and may do this for the next cohort*
 
-## Checklist 
+## Checklist
 
 | Check                                                                                                                                                                                                                                                                                           | Chapter in Textbook                                                                 |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------|
